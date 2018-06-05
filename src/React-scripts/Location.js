@@ -257,7 +257,7 @@ class Location extends Component {
     })
 
     /* Calling componentWillMount method */
-    this.componentWillMount();
+    this.handleClick();
 
   }
 
