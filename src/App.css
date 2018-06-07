@@ -8,6 +8,10 @@ a {
   color: black;
 }
 
+p {
+  margin: 8px 0 8px 0;
+}
+
 .App-header {
   width: 100%;
   height: 50px;
@@ -90,11 +94,12 @@ a {
 
 .rain-percipity-para-daily {
   float: left;
-  margin-left: 27.5%;
-  width: 45%;
+  margin-left: 15%;
+  width: 70%;
 }
 
 .rain-percipity-para-current {
+  margin-top: 10px;
   float: left;
 }
 
@@ -105,8 +110,7 @@ a {
 
 .rain-percipity-icon {
   float: left;
-  margin-top: 6px;
-  display: block;
+  display: inline;
   width: 10%;
   height: 40px;
 }
@@ -199,7 +203,7 @@ a {
 
 
 
-  #powered_image{
+  #powered_image{website not working properly on phone
     width: 25%;
     margin-left: 5%;
     float: left;
@@ -247,5 +251,11 @@ a {
     margin-left: 2.5%;
     margin-bottom: 20px;
     width: 30%;
+  }
+
+  .rain-percipity-para-daily {
+    float: left;
+    margin-left: 27.5%;
+    width: 45%;
   }
 }
