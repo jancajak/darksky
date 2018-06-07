@@ -100,7 +100,7 @@ class Location extends Component {
       function error(error){
 
         /* Calling this api to retrieve position using IP address */
-        axios.get('http://ip-api.com/json')
+        axios.get('https://ip-api.com/json')
           .then(response => {
 
             /* Setting up state with information about place */
