@@ -258,7 +258,12 @@ class Location extends Component {
     })
 
     /* Calling componentWillMount method */
-    this.handleClick();
+    if (this.state.searchQuery) {
+      this.handleClick();
+    } else {
+      this.componentWillMount();
+    }
+
 
   }
 
