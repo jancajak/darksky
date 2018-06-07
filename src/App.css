@@ -16,32 +16,29 @@ a {
 
 #search {
   margin-left: 30px;
-  margin-top: 20px;
-  float: left;
+  margin-top: 10px;
   font-size: 15px;
   border-radius: 10px;
-  margin-bottom: 10px;
   height: 35px;
-  width: 35%;
+  width: 80%;
+  display: block;
 }
 
 #sub_btn {
-  margin-left: 20px;
-  margin-top: 22.5px;
-  float: left;
+  margin-left: 20%;
+  margin-top: 12.5px;
   background-color: inherit;
   border: 1px solid;
   border-radius: 8px;
   height: 30px;
-  width: 5%;
+  width: 70px;
 }
 
 #choose {
   margin-top: 22.5px;
   margin-left: 10px;
-  float: left;
   height: 15px;
-  width: 50px;
+  width: 15%;
 }
 
 #sub_btn:hover {
@@ -50,10 +47,12 @@ a {
 }
 
 #powered_image {
-  margin-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   height: 80px;
-  width: 25%;
-  float: left;
+  width: 80%;
+  float: none;
 }
 
 #powered_image:hover{
@@ -61,14 +60,16 @@ a {
 }
 
 .forecast-body {
+  padding-top: 2px;
+  padding-bottom: 2px;
   border-radius: 15px;
-  padding-left: 20px;
   background-color: #ffffff;
-  width: 30%;
+  padding-left: 5%;
+  width: 85%;
   margin-top: 10px;
-  float: left;
   margin-left: 5%;
-  clear: both;
+  margin-right: 5%;
+  display: block;
 }
 
 #temperature {
@@ -126,15 +127,15 @@ a {
 
 
 .forecast-detailed {
+  padding-top: 2px;
+  padding-bottom: 2px;
   border-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 5%;
   margin-top: 10px;
-  margin-left: 1%;
+  margin-left: 5%;
   background-color: #ffffff;
-  width: 20%;
-  float: left;
-  margin-left: 2.5%;
+  width: 85%;
+  display: block;
 }
 
 
@@ -146,12 +147,13 @@ a {
 }
 
 .forecast-daily {
+  padding-left: 5%;
   border-radius: 15px;
   display: block;
   margin-top: 10px;
   margin-left: 5%;
   margin-bottom: 20px;
-  width: 30%;
+  width: 85%;
   background-color: #ffffff;
   float: left;
 }
@@ -185,16 +187,66 @@ a {
 }
 
 .footer{
-  clear: both;
   padding: 10px;
   margin-top: 15px;
-  display: block;
   text-align: center;
   border-top: 1px solid black;
   width: 100%;
+  clear: both;
 }
 
 
-@@media only screen and(min-width: 1024px) {
+@media only screen and (min-width: 840px) {
 
+
+
+  #powered_image{
+    width: 25%;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #search {
+    margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+    width: 35%;
+  }
+
+  #sub_btn {
+    margin-left: 20px;
+    margin-top: 22.5px;
+    width: 70px;
+  }
+
+  #choose {
+    margin-top: 22.5px;
+    margin-left: 10px;
+    height: 15px;
+    width: 50px;
+  }
+
+  .forecast-body {
+    padding-left: 2.5%;
+    width: 30%;
+    float: left;
+    margin-left: 5%;
+    clear: both;
+  }
+
+  .forecast-detailed {
+    padding-left: 1%;
+    width: 20%;
+    float: left;
+    margin-left: 2.5%;
+
+  }
+
+  .forecast-daily {
+    padding: 0 0 0 0;
+    float: left;
+    margin-left: 2.5%;
+    margin-bottom: 20px;
+    width: 30%;
+  }
 }
