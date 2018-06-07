@@ -98,7 +98,7 @@ class Location extends Component {
 
       /* Callback on permission denied */
       function error(error){
-
+        console.log('The location was not allowed');
         /* Calling this api to retrieve position using IP address */
         axios.get('https://ip-api.com/json')
           .then(response => {
