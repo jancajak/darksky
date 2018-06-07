@@ -29,19 +29,19 @@ p {
 }
 
 #sub_btn {
-  margin-left: 20%;
+  margin-left: 31%;
   margin-top: 12.5px;
   background-color: inherit;
   border: 1px solid;
   border-radius: 8px;
   height: 30px;
-  width: 70px;
+  width: 20%;
 }
 
 #choose {
   margin-top: 22.5px;
-  margin-left: 10px;
-  height: 15px;
+  margin-left: 3%;
+  height: 25px;
   width: 15%;
 }
 
@@ -80,6 +80,7 @@ p {
   float: left;
   font-size: 30px;
   margin-bottom: 3px;
+  margin-top: 30px;
 }
 
 
@@ -203,7 +204,7 @@ p {
 
 
 
-  #powered_image{website not working properly on phone
+  #powered_image{
     width: 25%;
     margin-left: 5%;
     float: left;
