@@ -102,7 +102,7 @@ class Location extends Component {
         /* Calling this api to retrieve position using IP address */
         axios.get('https://ip-api.com/json')
           .then(response => {
-
+            console.log(response);
             /* Setting up state with information about place */
             this.setState({
               place: {
