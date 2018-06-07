@@ -55,7 +55,7 @@ class Location extends Component {
     if (navigator.geolocation) {
 
       /* HTML geolocation permission asked */
-      navigator.geolocation.getCurrentPosition(success.bind(this), error,);
+      navigator.geolocation.getCurrentPosition(success.bind(this), error.bind(this));
       /* Callback on permission granted */
       function success(position) {
 
@@ -98,17 +98,18 @@ class Location extends Component {
 
       /* Callback on permission denied */
       function error(error){
-        console.log('The location was not allowed');
+
         /* Calling this api to retrieve position using IP address */
-        axios.get('https://ip-api.com/json')
+        axios.get('https://ipapi.co/json/')
           .then(response => {
-            console.log(response);
+
+
             /* Setting up state with information about place */
             this.setState({
               place: {
-                lat: response.data.lat,
-                lng: response.data.lon,
-                name: response.data.city + ',' + response.data.country
+                lat: response.data.latitude,
+                lng: response.data.longitude,
+                name: response.data.city + ', ' + response.data.country_name
               }
             })
 
@@ -149,7 +150,7 @@ class Location extends Component {
     /* Loop to get data into a state of react component */
     for (let i = 1; i < 8; i++) {
         count[i] = {
-         day: days[new Date(response.data.daily.data[i].time * 1000).getUTCDay()] + ' - ' + new Date(response.data.daily.data[i].time * 1000).getUTCDate() + '. / ' + (new Date(response.data.daily.data[i].time * 1000).getUTCMonth() + 1) + '.',
+         day: days[new Date(response.data.daily.data[i].time * 1000).getUTCDay()] + ' - ' + new Date(response.data.daily.data[i].time * 1000).getUTCDate() + '. ' + (new Date(response.data.daily.data[i].time * 1000).getUTCMonth() + 1) + '.',
          temperature: Math.round((response.data.daily.data[i].temperatureMax + response.data.daily.data[i].temperatureMin) / 2),
          temperatureMax: Math.round(response.data.daily.data[i].temperatureMax),
          temperatureMin: Math.round(response.data.daily.data[i].temperatureMin),
@@ -269,11 +270,9 @@ class Location extends Component {
     }
   }
 
+  /* Handle click on powered image */
   handleClickOnImage() {
-    let win;
-
-    win = window.open('https://darksky.net/poweredby/', '_blank');
-    win.focus();
+    window.open('https://darksky.net/poweredby/', '_blank');
   }
 
   /* Rendering the component */
