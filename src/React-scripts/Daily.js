@@ -9,8 +9,6 @@ class Hourly extends Component {
 
     /* Setting up default states */
     this.state = {
-      displayNot: 'none',
-      display: 'block',
       number: 1
     };
   }
@@ -19,26 +17,27 @@ class Hourly extends Component {
   handleClick(e) {
     this.setState({
       /* Getting the number of day what needs to be shown */
-      number: parseInt(e.target.id.slice(9,10), 10),
+      number: parseInt(e.currentTarget.id.slice(9,10), 10),
       /* Helping parameter to fulfill condition */
       done: true
     })
 
     /* If item is open, updating state to make it disappear */
-    if (e.target.nextSibling.nextSibling.style.display === 'block') {
-      this.setState({
-        disappear: true
-      })
-    } else {
-      this.setState({
-        disappear: false
-      })
+      if (e.currentTarget.nextSibling.className === 'display') {
+        this.setState({
+          disappear: true
+        })
+      } else {
+        this.setState({
+          disappear: false
+        })
     }
 
   }
 
   /* Rendering component */
   render() {
+
 
     /* Basic logic to set default values */
     let dailyItem, ident, currIcon, percIcon;
@@ -65,8 +64,8 @@ class Hourly extends Component {
 
       /* JSX element of daily items */
       dailyItem[i] = <div className="forecast-daily-item">
-          <button className='item_btn' id={ident} onClick={this.handleClick}><span>{this.props.forecast[i].day}</span></button><br/>
-            <div className="displayNot">
+          <button className='item_btn' id={ident} onClick={this.handleClick}><span>{this.props.forecast[i].day}</span></button>
+            <div id='bla' className="displayNot">
             <img className="item-icon" src={require(`../images/${currIcon}.svg`)} alt="Forecast icon" />
               <span>{this.props.forecast[i].temperature} °{this.props.units.temp}</span><br/>
               <p>Max: {this.props.forecast[i].temperatureMax} °{this.props.units.temp} / Min: {this.props.forecast[i].temperatureMin} °{this.props.units.temp}</p>
@@ -81,7 +80,8 @@ class Hourly extends Component {
     }
 
     /* Condition to decide if item is to display */
-    if (this.state.done) {
+
+    if (this.state.done && this.props.forecast[this.state.number].day) {
 
       /* Helping variable to avoid replacing of id of the button what was clicked with default value */
       let ident2;
@@ -89,8 +89,8 @@ class Hourly extends Component {
 
       /* JSX element of daily item which is to display */
       dailyItem[this.state.number] =<div className="forecast-daily-item">
-          <button className='item_btn' id={ident2} onClick={this.handleClick}><span>{this.props.forecast[this.state.number].day}</span></button><br/>
-            <div className="display">
+          <button className='item_btn' id={ident2} onClick={this.handleClick}><span>{this.props.forecast[this.state.number].day}</span></button>
+            <div id='bla' className="display">
               <img className="item-icon" src={require(`../images/${currIcon}.svg`)} alt="Forecast icon" />
               <span>{this.props.forecast[this.state.number].temperature} °{this.props.units.temp}</span><br/>
               <p>Max: {this.props.forecast[this.state.number].temperatureMax} °{this.props.units.temp} / Min: {this.props.forecast[this.state.number].temperatureMin} °{this.props.units.temp}</p>
@@ -111,8 +111,8 @@ class Hourly extends Component {
 
       /* JSX element of daily item which is to disappear */
       dailyItem[this.state.number] =<div className="forecast-daily-item">
-          <button className='item_btn' id={ident2} onClick={this.handleClick}><span>{this.props.forecast[this.state.number].day}</span></button><br/>
-            <div className="displayNot">
+          <button className='item_btn' id={ident2} onClick={this.handleClick}><span>{this.props.forecast[this.state.number].day}</span></button>
+            <div id='bla' className="displayNot">
               <img className="item-icon" src={require(`../images/${currIcon}.svg`)} alt="Forecast icon" />
               <span>{this.props.forecast[this.state.number].temperature} °{this.props.units.temp}</span><br/>
               <p>Max: {this.props.forecast[this.state.number].temperatureMax} °{this.props.units.temp} / Min: {this.props.forecast[this.state.number].temperatureMin} °{this.props.units.temp}</p>
